@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api';
 import { Badge, Empty, fmtDateTime, useMoney, useToast } from '../ui';
-import { CONTACT } from '../contact';
 
 const RESULT = {
   recognised: ['green', 'Student card'],
@@ -70,16 +69,6 @@ export default function Dashboard() {
           <p className="muted small">Today: {d.issued_today} issued, {d.returned_today} returned.</p>
         </section>
       </div>
-      <section className="card help-card">
-        <h2><span className="help-q" aria-hidden="true">?</span> Need help?</h2>
-        <p>If you need help with equipment, student registration or your account, contact the lab in-charge:</p>
-        <ul className="plain help-list">
-          <li><span>{CONTACT.name}, {CONTACT.title}</span></li>
-          <li><a href={`tel:${CONTACT.phoneLink}`}>{CONTACT.phone}</a></li>
-          <li><span>{CONTACT.address}</span></li>
-          <li><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
-        </ul>
-      </section>
     </>
   );
 }
